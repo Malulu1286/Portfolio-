@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Zakaria Malulu</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- AOS CSS for animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.7rem;
+        }
+
+        .resume {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin-top: 20px;
+        }
+
+        .heading-line {
+            width: 50px;
+            height: 3px;
+            background-color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .summary, .education, .experience {
+            margin-bottom: 30px;
+        }
+
+        /* Remove bullets from lists */
+        .education ul, .experience ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .education li, .experience li {
+            margin-bottom: 10px;
+        }
+
+        /* Removing bullets and adding custom icons */
+        .education li::before, .experience li::before {
+            content: ''; /* Remove bullets */
+            margin-right: 10px;
+        }
+
+        footer {
+            background: linear-gradient(to right, #343a40, #495057);
+            color: white;
+            padding: 40px 0;
+            position: relative;
+            text-align: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #007bff;
+            transform: scale(1.2);
+        }
+
+        footer .fab, footer .fas {
+            transition: transform 0.3s ease;
+        }
+
+        footer .fab:hover, footer .fas:hover {
+            transform: scale(1.3);
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Zakaria Malulu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resume Section -->
+    <section class="resume py-5" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-center mb-4"><i class="fas fa-file-alt"></i> My Resume</h2>
+            <div class="heading-line"></div>
+
+            <!-- Summary Section -->
+            <div class="summary" data-aos="fade-up">
+                <h3 class="section-title"><i class="fas fa-info-circle"></i> Summary</h3>
+                <p>Hello! I'm Zakaria Malulu, a Bachelor Degree in Computer Science graduate with a passion for software development and web technologies. I specialize in creating reliable and efficient software solutions. My goal is to solve complex challenges with innovative, scalable, and user-friendly digital products.</p>
+            </div>
+
+            <!-- Education Section -->
+            <div class="education" data-aos="fade-up">
+                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                <div class="heading-line"></div>
+                <ul>
+                    <li><strong>Bachelor's Degree in Computer Science</strong> - Institute Of Accountancy Arusha-IAA (2022 - 2025)</li>
+                    <li><strong>Advanced Level Education</strong> - Tarime High School (2020 - 2022)</li>
+                    <li><strong>Ordinary Level Education</strong> - Ibaga Secondary School (2016 - 2019)</li>
+                </ul>
+            </div>
+
+            <!-- Professional Experience Section -->
+            <div class="experience" data-aos="fade-up">
+                <h3 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h3>
+                <div class="heading-line"></div>
+                <ul>
+                    <li><strong>Field Training</strong> - Sokoine University of Agriculture (SUA) (2024)
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Networking and Systems Maintenance.</li>
+                            <li><i class="fas fa-check-circle"></i> During my field training, I assisted in maintaining and securing network infrastructures and internal systems. I performed system audits, identified potential security gaps, and supported IT infrastructure upgrades to enhance cybersecurity resilience.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Intern</strong> - St. Reuben Training College-Morogoro (2025)
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Developed a web-based management system designed to streamline administrative functions such as course management, student registration, and program tracking.</li>
+                            <li><i class="fas fa-check-circle"></i> Created an intuitive system using PHP, MySQL, Bootstrap, and FontAwesome to improve the college’s digital experience.</li>
+                            <li><i class="fas fa-check-circle"></i> Contributed to the project by designing system architecture and developing front-end and back-end components.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Zakaria Malulu. All Rights Reserved.</p>
+            <div>
+                <a href="https://linkedin.com/in/zakaria-malulu-7871b437a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Malulu1286" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:zakariamalulu12@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/+255768679436" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/zed_grouptz" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+    </script>
+</body>
+
+</html>
