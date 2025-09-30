@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,6 +49,28 @@
             font-size: 3.5rem;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid rgba(255, 255, 255, 0.75);
+            width: 0;
+            animation: typing 3s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
+        }
+
+        /* Typing Animation */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
         }
 
         .hero p {
@@ -149,17 +172,36 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about h2 {
+                font-size: 2rem;
+            }
+
+            .about img {
+                max-width: 200px;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            footer a {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVP9VQD7VP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-PVP9VQD7VP');
-</script>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
@@ -174,7 +216,7 @@
                     <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                     <li class="nav-item"><a class="nav-link" href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
                 </ul>
             </div>
         </div>
@@ -237,12 +279,5 @@
         AOS.init();
     </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
