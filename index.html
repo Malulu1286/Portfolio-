@@ -215,6 +215,24 @@
 </head>
 
 <body>
+    <!-- Modal Pop-Up -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Welcome to My Portfolio</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Thank you for visiting my portfolio. I hope you enjoy exploring my projects. Let me know if you have any questions!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
@@ -289,6 +307,14 @@
     <script>
         // Initialize AOS
         AOS.init();
+
+        // Show modal pop-up on page load
+        window.onload = function() {
+            var myModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
+                keyboard: false
+            });
+            myModal.show();
+        };
     </script>
 </body>
 
