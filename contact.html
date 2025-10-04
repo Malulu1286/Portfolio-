@@ -5,26 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me - Zakaria Malulu</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- FontAwesome for icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
     <!-- AOS CSS for animations -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
     <!-- Custom styles -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f4f6f9;
             color: #333;
-            padding-top: 80px; /* Adjust to account for static header */
         }
 
         .navbar {
@@ -132,7 +126,7 @@
                     <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                     <li class="nav-item"><a class="nav-link" href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
                 </ul>
             </div>
         </div>
@@ -161,6 +155,7 @@
                         <button type="button" class="btn btn-primary" onclick="sendMessage()">Send Message</button>
                     </form>
                 </div>
+
                 <!-- Contact Information -->
                 <div class="col-md-6" data-aos="fade-left">
                     <h3>Get in Touch</h3>
@@ -193,10 +188,8 @@
 
     <!-- Bootstrap JS and Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- AOS JS for animations -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-
     <script>
         // Initialize AOS
         AOS.init();
@@ -212,7 +205,7 @@
             const text = `Page: ${pageTitle}%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
 
             // WhatsApp link with encoded message
-            const whatsappLink = `https://wa.me/+255768679436?text=${encodeURIComponent(text)}`;
+            const whatsappLink = `https://wa.me/+255768679436?text=${text}`;
 
             // Redirect to WhatsApp
             window.open(whatsappLink, '_blank');
