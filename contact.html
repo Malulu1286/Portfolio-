@@ -76,6 +76,70 @@
             text-decoration: underline;
         }
 
+        /* Comment Section Styling */
+        .comments-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .comments-section h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .comment-box {
+            margin-bottom: 20px;
+        }
+
+        .comment-box input,
+        .comment-box textarea {
+            width: 100%;
+            border-radius: 8px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .comment-box button {
+            border-radius: 8px;
+            padding: 8px 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+
+        .comment-box button:hover {
+            background-color: #218838;
+        }
+
+        .comment {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .comment p {
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        .comment button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .comment button:hover {
+            background-color: #0056b3;
+        }
+
         footer {
             background-color: #343a40;
             color: white;
@@ -111,21 +175,14 @@
         }
     </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PVP9VQD7VP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-PVP9VQD7VP');
-</script>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">Zakaria J. Malulu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -180,6 +237,21 @@
         </div>
     </section>
 
+    <!-- Comment Section -->
+    <section class="comments-section py-5">
+        <div class="container">
+            <h3>Leave a Comment</h3>
+            <div class="comment-box">
+                <input type="text" class="form-control mb-3" placeholder="Enter your name" id="commenterName" required>
+                <textarea class="form-control mb-3" id="commentText" rows="4" placeholder="Leave your comment here..." required></textarea>
+                <button class="btn btn-success" onclick="postComment()">Post Comment</button>
+            </div>
+            <div id="commentsList" class="mt-4">
+                <!-- Comments will be dynamically displayed here -->
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -218,9 +290,42 @@
             // Redirect to WhatsApp
             window.open(whatsappLink, '_blank');
         }
+
+        // Function to post comment
+        function postComment() {
+            const name = document.getElementById('commenterName').value;
+            const commentText = document.getElementById('commentText').value;
+
+            const commentHTML = `
+                <div class="comment">
+                    <p><strong>${name}</strong></p>
+                    <p>${commentText}</p>
+                    <button class="btn btn-primary btn-sm" onclick="likeComment(this)">Like</button>
+                    <button class="btn btn-info btn-sm ml-2" onclick="replyToComment(this)">Reply</button>
+                </div>
+            `;
+
+            document.getElementById('commentsList').innerHTML += commentHTML;
+            document.getElementById('commenterName').value = '';
+            document.getElementById('commentText').value = '';
+        }
+
+        // Like comment function
+        function likeComment(button) {
+            button.innerHTML = 'Liked';
+            button.disabled = true;
+        }
+
+        // Reply to comment function
+        function replyToComment(button) {
+            const reply = prompt('Enter your reply:');
+            if (reply) {
+                const comment = button.parentElement;
+                const replyHTML = `<p><em>Reply: ${reply}</em></p>`;
+                comment.innerHTML += replyHTML;
+            }
+        }
     </script>
 </body>
 
 </html>
-
-
