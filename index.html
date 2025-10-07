@@ -30,7 +30,19 @@
 
         .navbar-brand {
             font-weight: bold;
-            font-size: 1.7rem;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fff;
         }
 
         /* Hero Section */
@@ -48,7 +60,7 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             white-space: nowrap;
@@ -58,12 +70,10 @@
             animation: typing 3s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
         }
 
-        /* Typing Animation */
         @keyframes typing {
             from {
                 width: 0;
             }
-
             to {
                 width: 100%;
             }
@@ -76,30 +86,37 @@
         }
 
         .hero p {
-            font-size: 1.3rem;
-            line-height: 1.5;
+            font-size: 1.5rem;
+            line-height: 1.7;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            margin-top: 1rem;
         }
 
         .hero .btn {
-            font-size: 1.1rem;
-            padding: 12px 25px;
+            font-size: 1.2rem;
+            padding: 15px 30px;
             border-radius: 30px;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: #28a745;
+            color: #fff;
             font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #218838;
         }
 
         /* About Section */
         .about {
             padding: 80px 0;
-            background-color: #f8f9fa;
+            background-color: #fff;
         }
 
         .about h2 {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 40px;
+            color: #333;
         }
 
         .about p {
@@ -118,7 +135,7 @@
         .cta {
             background-color: #343a40;
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
         }
 
@@ -132,6 +149,14 @@
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 50px;
+            background-color: #28a745;
+            color: white;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta a:hover {
+            background-color: #218838;
         }
 
         /* Footer */
@@ -169,12 +194,6 @@
             transform: scale(1.3);
         }
 
-        .navbar-nav .nav-link {
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         /* Media Queries for Mobile Responsiveness */
         @media (max-width: 768px) {
             .hero {
@@ -188,7 +207,7 @@
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .hero .btn {
@@ -273,6 +292,15 @@
         </div>
     </header>
 
+    <!-- New Section: Call to Action for Services Page -->
+    <section class="cta py-5">
+        <div class="container">
+            <h2>Interested in Our Services?</h2>
+            <p class="lead mb-4">Explore the services we offer and take your business to the next level. Whether it's web development, mobile app development, or system administration, we’ve got you covered!</p>
+            <a href="services.html" class="btn btn-light btn-lg shadow-sm"><i class="fas fa-cogs"></i> View Our Services</a>
+        </div>
+    </section>
+
     <!-- About Me Section -->
     <section class="about py-5" data-aos="fade-up">
         <div class="container">
@@ -331,4 +359,3 @@
 </body>
 
 </html>
-
