@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <!-- AOS CSS for animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        /* Header Styles */
+        .navbar {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.7rem;
+        }
+
+        /* Modern Card Styles */
+        .service-card {
+            border: none;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card .card-body {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        .service-card .card-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .service-card .card-price {
+            font-size: 2.2rem;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .service-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .service-card ul li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-card ul li i {
+            margin-right: 10px;
+            color: #28a745;
+        }
+
+        .service-card .btn {
+            background-color: #007bff;
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-card .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .services-section {
+            padding: 70px 0;
+        }
+
+        .services-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer a {
+            color: white;
+            margin: 0 20px;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        footer a:hover {
+            transform: scale(1.2);
+            color: #007bff;
+        }
+
+        footer .fab {
+            transition: transform 0.3s ease;
+        }
+
+        footer .fab:hover {
+            transform: scale(1.3);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header: Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">Zakaria J. Malulu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="services-section container">
+        <h2 class="services-title">Our Services</h2>
+        
+        <!-- Web Development -->
+        <h3 class="text-center">Web Development</h3>
+        <div class="row">
+            <!-- Package 1 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Basic Web Development</h3>
+                        <p class="card-price">From 550,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i>Up to 3 Pages</li>
+                            <li><i class="fas fa-check-circle"></i>Basic SEO</li>
+                            <li><i class="fas fa-check-circle"></i>1-2 Week Delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 2 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Standard Web Development</h3>
+                        <p class="card-price">From 650,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i>Up to 5 Pages</li>
+                            <li><i class="fas fa-check-circle"></i>Basic SEO</li>
+                            <li><i class="fas fa-check-circle"></i>Premium Blog Layout</li>
+                            <li><i class="fas fa-check-circle"></i>1-2 Week Delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 3 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Advanced Web Development</h3>
+                        <p class="card-price">From 800,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i>Up to 10 Pages</li>
+                            <li><i class="fas fa-check-circle"></i>SEO for Top Keywords</li>
+                            <li><i class="fas fa-check-circle"></i>Conversion-based Writing</li>
+                            <li><i class="fas fa-check-circle"></i>2-3 Week Delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 4 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Premium Web Development</h3>
+                        <p class="card-price">From 1,000,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i>Up to 15 Pages</li>
+                            <li><i class="fas fa-check-circle"></i>Full SEO Optimization</li>
+                            <li><i class="fas fa-check-circle"></i>Conversion-based Writing</li>
+                            <li><i class="fas fa-check-circle"></i>2-4 Week Delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile App Development -->
+        <h3 class="text-center">Mobile App Development</h3>
+        <div class="row">
+            <!-- Package 1 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Basic Mobile App</h3>
+                        <p class="card-price">From 650,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Basic App Design</li>
+                            <li><i class="fas fa-check-circle"></i>Single Platform (Android/iOS)</li>
+                            <li><i class="fas fa-check-circle"></i>Basic App Features</li>
+                            <li><i class="fas fa-check-circle"></i>2-3 Week Delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 2 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Standard Mobile App</h3>
+                        <p class="card-price">From 850,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Responsive Design</li>
+                            <li><i class="fas fa-check-circle"></i>Cross-Platform</li>
+                            <li><i class="fas fa-check-circle"></i>Advanced Features</li>
+                            <li><i class="fas fa-check-circle"></i>3-4 Week Delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 3 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Advanced Mobile App</h3>
+                        <p class="card-price">From 1,200,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Cross-Platform + Native</li>
+                            <li><i class="fas fa-check-circle"></i>Real-time Features</li>
+                            <li><i class="fas fa-check-circle"></i>Push Notifications</li>
+                            <li><i class="fas fa-check-circle"></i>4-5 Week Delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 4 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Premium Mobile App</h3>
+                        <p class="card-price">From 1,500,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>All Features Included</li>
+                            <li><i class="fas fa-check-circle"></i>Real-time Database</li>
+                            <li><i class="fas fa-check-circle"></i>In-app Purchases</li>
+                            <li><i class="fas fa-check-circle"></i>5-6 Week Delivery</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Administration -->
+        <h3 class="text-center">System Administration</h3>
+        <div class="row">
+            <!-- Package 1 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Basic System Admin</h3>
+                        <p class="card-price">From 200,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Server Setup</li>
+                            <li><i class="fas fa-check-circle"></i>Backup Services</li>
+                            <li><i class="fas fa-check-circle"></i>1 Month Support</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 2 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Standard System Admin</h3>
+                        <p class="card-price">From 300,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>System Monitoring</li>
+                            <li><i class="fas fa-check-circle"></i>Backup & Recovery</li>
+                            <li><i class="fas fa-check-circle"></i>2 Months Support</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 3 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Advanced System Admin</h3>
+                        <p class="card-price">From 500,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Advanced Monitoring</li>
+                            <li><i class="fas fa-check-circle"></i>Security Audits</li>
+                            <li><i class="fas fa-check-circle"></i>3 Months Support</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Package 4 -->
+            <div class="col-md-3" data-aos="fade-up">
+                <div class="card service-card">
+                    <div class="card-body">
+                        <h3 class="card-title">Premium System Admin</h3>
+                        <p class="card-price">From 800,000</p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i>Comprehensive System Setup</li>
+                            <li><i class="fas fa-check-circle"></i>24/7 Support</li>
+                            <li><i class="fas fa-check-circle"></i>Cloud & Database Management</li>
+                        </ul>
+                        <a href="contact.html" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Zakaria Malulu. All Rights Reserved.</p>
+            <div>
+                <a href="https://www.linkedin.com/in/zakaria-malulu-7871b437a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Malulu1286" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:zakariamalulu12@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/+255768679436" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/zed_grouptz" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS JS for animations -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+    </script>
+
+</body>
+
+</html>
