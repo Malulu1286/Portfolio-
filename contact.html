@@ -270,49 +270,46 @@
     <!-- AOS JS for animations -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-    <!-- Count Animation Script -->
-    <script>
-        // Initialize AOS
-        AOS.init();
+   <script>
+    // Initialize AOS
+    AOS.init();
 
-        // Function to animate counters
-        document.addEventListener("DOMContentLoaded", function () {
-            const counters = document.querySelectorAll(".counter");
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = +counter.getAttribute("data-target");
-                    const count = +counter.innerText;
+    // Function to animate counters
+    document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter");
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute("data-target");
+                const count = +counter.innerText;
 
-                    const increment = target / 100;
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + increment);
-                        setTimeout(updateCount, 1);
-                    } else {
-                        counter.innerText = target;
-                    }
-                };
+                // Slow down the increment for the counter
+                const increment = target / 100; // Adjust increment speed here
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 30); // Slow down by increasing the timeout (increase the number to make it slower)
+                } else {
+                    counter.innerText = target;
+                }
+            };
 
-                updateCount();
-            });
+            updateCount();
         });
+    });
 
-        // Function to send message to WhatsApp with user data
-        function sendMessage() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const pageTitle = document.title; // Get the page title (e.g., "Contact Me")
+    // Function to send message to WhatsApp with user data
+    function sendMessage() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        const pageTitle = document.title; // Get the page title (e.g., "Contact Me")
 
-            // Encode the message
-            const text = `Page: ${pageTitle}%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+        // Encode the message
+        const text = `Page: ${pageTitle}%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
 
-            // WhatsApp link with encoded message
-            const whatsappLink = `https://wa.me/+255768679436?text=${text}`;
+        // WhatsApp link with encoded message
+        const whatsappLink = `https://wa.me/+255768679436?text=${text}`;
 
-            // Redirect to WhatsApp
-            window.open(whatsappLink, '_blank');
-        }
-    </script>
-</body>
-
-</html>
+        // Redirect to WhatsApp
+        window.open(whatsappLink, '_blank');
+    }
+</script>
