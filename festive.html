@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Zakaria J. Malulu – Software Developer specializing in secure, scalable digital solutions.">
+
 <title>Zakaria J. Malulu | Software Developer</title>
 
 <!-- Bootstrap -->
@@ -61,7 +63,7 @@ html,body{
 }
 
 .festive-box h1{
-    font-size:clamp(2.2rem,5vw,3.6rem);
+    font-size:clamp(2rem,5vw,3.2rem);
     font-weight:800;
     text-shadow:0 0 25px gold;
 }
@@ -133,8 +135,8 @@ html,body{
 }
 
 .profile-img{
-    width:220px;
-    height:220px;
+    width:200px;
+    height:200px;
     object-fit:cover;
     border-radius:50%;
     border:6px solid var(--primary);
@@ -144,12 +146,8 @@ html,body{
 footer{
     background:#0b0f19;
 }
-footer a{
-    color:#bbb;
-}
-footer a:hover{
-    color:var(--primary);
-}
+footer a{ color:#bbb }
+footer a:hover{ color:var(--primary) }
 </style>
 </head>
 
@@ -182,7 +180,7 @@ footer a:hover{
 </div>
 
 <!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-dark fixed-top">
 <div class="container">
 <a class="navbar-brand" href="#">Zakaria Malulu</a>
 </div>
@@ -191,7 +189,7 @@ footer a:hover{
 <!-- ================= HERO ================= -->
 <header class="hero">
 <div class="container" data-aos="fade-up">
-<h1 class="display-5 fw-bold">Hello, I’m Zakaria</h1>
+<h1 class="display-6 fw-bold">Hello, I’m Zakaria</h1>
 <p class="mt-3 fs-5">
 Computer Science Graduate • Software Developer • Digital Solutions Architect<br>
 <span class="text-success fw-semibold">
@@ -207,7 +205,7 @@ Wishing you a Merry Christmas and a Prosperous New Year 🎄✨
 <div class="row g-5 align-items-center">
 
 <div class="col-md-4 text-center" data-aos="zoom-in">
-<img src="assets/profile.webp" class="profile-img shadow-lg">
+<img src="assets/profile.webp" class="profile-img shadow-lg" alt="Zakaria Malulu">
 <h4 class="mt-4 fw-bold">Zakaria J. Malulu</h4>
 <p class="text-muted">Software Developer</p>
 </div>
@@ -217,8 +215,8 @@ Wishing you a Merry Christmas and a Prosperous New Year 🎄✨
 <h2 class="fw-bold mb-3">Professional Summary</h2>
 <p class="text-muted">
 Results-driven Software Developer specializing in secure, scalable, and modern
-digital solutions. Experienced in PHP, MySQL, system design, and modern UI/UX,
-delivering reliable platforms that support business growth and innovation.
+digital solutions. Experienced in PHP, MySQL, system architecture, and UI/UX
+design, delivering reliable platforms that support business growth.
 </p>
 
 <div class="row mt-4">
@@ -231,7 +229,6 @@ delivering reliable platforms that support business growth and innovation.
 <p><i class="fas fa-check-circle text-success me-2"></i>Modern UI/UX</p>
 </div>
 </div>
-
 </div>
 </div>
 
@@ -309,13 +306,18 @@ Have a project or idea? Send me a message directly on WhatsApp.
 <script>
 AOS.init({ once:true });
 
-const startBtn = document.getElementById('startBtn');
-const muteBtn  = document.getElementById('muteBtn');
-const overlay  = document.getElementById('festiveOverlay');
-const music    = document.getElementById('bgMusic');
-const bell     = document.getElementById('bellSound');
+const overlay=document.getElementById('festiveOverlay');
+const startBtn=document.getElementById('startBtn');
+const muteBtn=document.getElementById('muteBtn');
+const music=document.getElementById('bgMusic');
+const bell=document.getElementById('bellSound');
 
 let muted=false, audioUnlocked=false;
+
+// show overlay once per visit
+if(localStorage.getItem('celebrated')){
+    overlay.style.display='none';
+}
 
 function playMusicSafely(audio){
     if(audioUnlocked) return;
@@ -324,22 +326,20 @@ function playMusicSafely(audio){
         audioUnlocked=true;
         let v=0.05;
         const fade=setInterval(()=>{
-            if(v<0.8){ v+=0.05; audio.volume=v; }
+            if(v<0.7){ v+=0.05; audio.volume=v; }
             else clearInterval(fade);
         },150);
     }).catch(()=>{});
 }
 
 startBtn.onclick=()=>{
-    const AudioContext=window.AudioContext||window.webkitAudioContext;
-    if(AudioContext){ new AudioContext().resume(); }
-
+    localStorage.setItem('celebrated','yes');
     bell.currentTime=0;
     bell.play().catch(()=>{});
     playMusicSafely(music);
 
-    overlay.style.opacity="0";
-    setTimeout(()=>overlay.style.display="none",800);
+    overlay.style.opacity='0';
+    setTimeout(()=>overlay.style.display='none',800);
 
     snow(); fireworks();
 };
@@ -359,10 +359,10 @@ function snow(){
         s.innerHTML='❄';
         s.style.left=Math.random()*innerWidth+'px';
         s.style.fontSize=12+Math.random()*10+'px';
-        s.style.animationDuration=3+Math.random()*5+'s';
+        s.style.animationDuration=4+Math.random()*5+'s';
         document.body.appendChild(s);
         setTimeout(()=>s.remove(),8000);
-    },260);
+    },350);
 }
 
 function fireworks(){
@@ -373,13 +373,19 @@ function fireworks(){
         f.style.top=Math.random()*innerHeight+'px';
         document.body.appendChild(f);
         setTimeout(()=>f.remove(),1500);
-    },900);
+    },1200);
 }
 
 function sendWhatsAppMessage(e){
     e.preventDefault();
-    const n=name.value, s=subject.value, m=message.value;
-    window.open(`https://wa.me/255768679436?text=Hello Zakaria,%0AName:${n}%0ASubject:${s}%0AMessage:%0A${m}`,'_blank');
+    const n=encodeURIComponent(name.value);
+    const s=encodeURIComponent(subject.value);
+    const m=encodeURIComponent(message.value);
+
+    window.open(
+        `https://wa.me/255768679436?text=Hello Zakaria,%0AName: ${n}%0ASubject: ${s}%0AMessage:%0A${m}`,
+        '_blank'
+    );
 }
 </script>
 
