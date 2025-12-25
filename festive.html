@@ -255,10 +255,6 @@ Have a project or idea? Send me a message directly on WhatsApp.
 <div class="row g-3">
 
 <div class="col-md-6">
-<input type="text" id="name" class="form-control form-control-lg" placeholder="Your Name" required>
-</div>
-
-<div class="col-md-6">
 <input type="text" id="subject" class="form-control form-control-lg" placeholder="Subject" required>
 </div>
 
@@ -378,8 +374,8 @@ function fireworks(){
 
 function sendWhatsAppMessage(e){
     e.preventDefault();
-    const n=name.value, s=subject.value, m=message.value;
-    window.open(`https://wa.me/255768679436?text=Hello Zakaria,%0AName:${n}%0ASubject:${s}%0AMessage:%0A${m}`,'_blank');
+    const s=subject.value, m=message.value;
+    window.open(`https://wa.me/255768679436?text=Hello Zakaria,%0ASubject:${s}%0AMessage:%0A${m}`,'_blank');
 }
 </script>
 
