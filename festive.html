@@ -41,17 +41,40 @@ html,body{
     justify-content:center;
     text-align:center;
     color:#fff;
+    transition:opacity .8s ease;
+}
+
+.festive-box{
+    background:rgba(255,255,255,.08);
+    padding:45px 35px;
+    border-radius:26px;
+    backdrop-filter:blur(14px);
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+    max-width:440px;
+}
+
+.festive-icon{
+    font-size:3.2rem;
+    color:gold;
+    margin-bottom:15px;
+    animation:pulse 2s infinite;
 }
 
 .festive-box h1{
-    font-size:clamp(2.2rem,5vw,4rem);
+    font-size:clamp(2.2rem,5vw,3.6rem);
     font-weight:800;
     text-shadow:0 0 25px gold;
 }
 
 .festive-box h2{
     color:gold;
-    margin-bottom:15px;
+    margin-bottom:10px;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);opacity:.8}
+    50%{transform:scale(1.1);opacity:1}
+    100%{transform:scale(1);opacity:.8}
 }
 
 /* ================= SNOW ================= */
@@ -115,19 +138,19 @@ html,body{
 }
 
 .hero h1{
-    font-size:clamp(2.3rem,5vw,4rem);
+    font-size:clamp(2.4rem,5vw,4rem);
     font-weight:800;
 }
 
 .hero p{
     font-size:1.05rem;
     opacity:.95;
-    max-width:780px;
+    max-width:800px;
     margin:0 auto;
 }
 
 .hero .btn{
-    padding:14px 34px;
+    padding:14px 36px;
     font-size:1.05rem;
     border-radius:50px;
 }
@@ -135,8 +158,8 @@ html,body{
 /* ================= ABOUT ================= */
 .about-card{
     background:#fff;
-    border-radius:20px;
-    padding:32px;
+    border-radius:22px;
+    padding:35px;
     box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
@@ -175,18 +198,33 @@ footer a:hover{
 
 <!-- FESTIVE OVERLAY -->
 <div id="festiveOverlay">
-    <div class="festive-box">
+    <div class="festive-box" data-aos="zoom-in">
+        <div class="festive-icon">
+            <i class="fas fa-music"></i>
+        </div>
+
         <h1>🎄 Merry Christmas 🎄</h1>
         <h2>🎆 Happy New Year 🎆</h2>
-        <button id="startBtn" class="btn btn-success btn-lg rounded-pill px-5 mt-4">
-            Start Celebration
-        </button>
+
+        <p class="opacity-75 mt-3">
+            Enjoy the festive vibes with music, snow & fireworks
+        </p>
+
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <button id="startBtn" class="btn btn-success btn-lg rounded-pill px-5">
+                <i class="fas fa-play me-2"></i>Start Celebration
+            </button>
+
+            <button id="muteBtn" class="btn btn-outline-light btn-lg rounded-pill px-4">
+                <i class="fas fa-volume-mute"></i>
+            </button>
+        </div>
     </div>
 
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" preload="auto" loop>
         <source src="assets/christmas.mp3" type="audio/mpeg">
     </audio>
-    <audio id="bellSound">
+    <audio id="bellSound" preload="auto">
         <source src="assets/bell.mp3" type="audio/mpeg">
     </audio>
 </div>
@@ -238,7 +276,7 @@ View My Portfolio
 <p class="mt-3">
 I am a passionate software developer specializing in
 <strong>PHP, MySQL, and modern web systems</strong>.
-I focus on building clean, secure, scalable, and user-friendly digital solutions
+I build clean, secure, scalable, and user-friendly digital solutions
 for businesses and individuals.
 </p>
 </div>
@@ -261,17 +299,43 @@ for businesses and individuals.
 <script>
 AOS.init({ once:true });
 
-const btn=document.getElementById('startBtn');
+const startBtn=document.getElementById('startBtn');
+const muteBtn=document.getElementById('muteBtn');
 const overlay=document.getElementById('festiveOverlay');
 const music=document.getElementById('bgMusic');
 const bell=document.getElementById('bellSound');
 
-btn.onclick=()=>{
+let muted=false;
+
+function fadeInAudio(audio){
+    audio.volume=0;
+    audio.play();
+    let v=0;
+    const fade=setInterval(()=>{
+        if(v<0.8){
+            v+=0.05;
+            audio.volume=v;
+        }else clearInterval(fade);
+    },150);
+}
+
+startBtn.onclick=()=>{
     bell.play();
-    music.play();
-    overlay.style.display='none';
+    fadeInAudio(music);
+
+    overlay.style.opacity="0";
+    setTimeout(()=>overlay.style.display="none",800);
+
     snow();
     fireworks();
+};
+
+muteBtn.onclick=()=>{
+    muted=!muted;
+    music.muted=muted;
+    muteBtn.innerHTML=muted
+        ? '<i class="fas fa-volume-up"></i>'
+        : '<i class="fas fa-volume-mute"></i>';
 };
 
 function snow(){
@@ -280,7 +344,7 @@ function snow(){
         s.className='snowflake';
         s.innerHTML='❄';
         s.style.left=Math.random()*window.innerWidth+'px';
-        s.style.fontSize=Math.random()*10+10+'px';
+        s.style.fontSize=Math.random()*10+12+'px';
         s.style.animationDuration=3+Math.random()*5+'s';
         document.body.appendChild(s);
         setTimeout(()=>s.remove(),8000);
