@@ -254,10 +254,6 @@ Have a project or idea? Send me a message directly on WhatsApp.
 <form onsubmit="sendWhatsAppMessage(event)">
 <div class="row g-3">
 
-<div class="col-md-6">
-<input type="text" id="subject" class="form-control form-control-lg" placeholder="Subject" required>
-</div>
-
 <div class="col-12">
 <textarea id="message" class="form-control form-control-lg" rows="4" placeholder="Your Message" required></textarea>
 </div>
@@ -375,7 +371,7 @@ function fireworks(){
 function sendWhatsAppMessage(e){
     e.preventDefault();
     const s=subject.value, m=message.value;
-    window.open(`https://wa.me/255768679436?text=Hello Zakaria,%0ASubject:${s}%0AMessage:%0A${m}`,'_blank');
+    window.open(`https://wa.me/255768679436?text=Hello Zakaria,%0AMessage:%0A${m}`,'_blank');
 }
 </script>
 
