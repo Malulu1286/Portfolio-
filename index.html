@@ -1,410 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zakaria J. Malulu - Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- AOS CSS for animations -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Custom styles -->
-    <style>
-        body, html {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Prevent horizontal overflow */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zakaria J. Malulu | Software Developer</title>
 
-        /* Loading Overlay Style */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        /* Bubble Pop Effect */
-        .bubble {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #28a745;
-            animation: bubblePop 5s ease-out infinite;
-        }
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-        @keyframes bubblePop {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-            50% {
-                transform: scale(1.2);
-                opacity: 0.6;
-            }
+<style>
 
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
 
-        /* Navigation Bar */
-        .navbar {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+/* NAVBAR */
+.navbar {
+    background: rgba(15, 23, 42, 0.95);
+}
 
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.8rem;
-            color: #fff;
-        }
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
 
-        .navbar-nav .nav-link {
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255, 255, 255, 0.8);
-        }
+.nav-link {
+    color: #cbd5e1 !important;
+    font-weight: 500;
+}
 
-        .navbar-nav .nav-link:hover {
-            color: #fff;
-        }
+.nav-link:hover {
+    color: #4f8cff !important;
+}
 
-        /* Hero Section */
-        .hero {
-            background-image: url('assets/web.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 15px;
-        }
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+                url('assets/web.jpg') center/cover no-repeat;
+}
 
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 4px solid rgba(255, 255, 255, 0.75);
-            width: 0;
-            animation: typing 3s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
-        }
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
 
-        @keyframes typing {
-            from {
-                width: 0;
-            }
+.text-accent {
+    color: #4f8cff;
+}
 
-            to {
-                width: 100%;
-            }
-        }
+.hero p {
+    color: #94a3b8;
+    max-width: 650px;
+    font-size: 1.1rem;
+    margin: 20px 0 35px;
+}
 
-        @keyframes blink-caret {
-            50% {
-                border-color: transparent;
-            }
-        }
+.badge-custom {
+    background: rgba(79, 140, 255, 0.15);
+    color: #4f8cff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
 
-        .hero p {
-            font-size: 1.5rem;
-            line-height: 1.7;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            margin-top: 1rem;
-        }
+/* BUTTONS */
+.btn-primary {
+    background-color: #4f8cff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+}
 
-        .hero .btn {
-            font-size: 1.2rem;
-            padding: 15px 30px;
-            border-radius: 30px;
-            background-color: #28a745;
-            color: #fff;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
+.btn-primary:hover {
+    background-color: #3b6fd8;
+}
 
-        .hero .btn:hover {
-            background-color: #218838;
-        }
+.btn-outline-light {
+    padding: 12px 28px;
+    border-radius: 30px;
+}
 
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background-color: #fff;
-        }
+/* SECTIONS */
+.section {
+    padding: 100px 0;
+}
 
-        .about h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-            color: #333;
-        }
+.section-title {
+    font-weight: 700;
+    margin-bottom: 40px;
+}
 
-        .about p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #555;
-        }
+/* SERVICES */
+.service-box {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    transition: 0.3s ease;
+    height: 100%;
+}
 
-        .about img {
-            max-width: 250px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+.service-box:hover {
+    transform: translateY(-6px);
+    background: #243248;
+}
 
-        /* Call to Action Section */
-        .cta {
-            background-color: #343a40;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
+.service-box i {
+    font-size: 28px;
+    color: #4f8cff;
+    margin-bottom: 15px;
+}
 
-        .cta h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
+/* CTA */
+.cta {
+    background: #1e293b;
+    text-align: center;
+}
 
-        .cta a {
-            font-size: 1.2rem;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            background-color: #28a745;
-            color: white;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
+/* FOOTER */
+footer {
+    background: #0b1120;
+    padding: 40px 0;
+    text-align: center;
+}
 
-        .cta a:hover {
-            background-color: #218838;
-        }
+footer a {
+    color: #94a3b8;
+    margin: 0 12px;
+    font-size: 1.2rem;
+}
 
-        /* Footer */
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 30px 0;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        }
+footer a:hover {
+    color: #4f8cff;
+}
 
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        footer a {
-            color: white;
-            margin: 0 20px;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        footer a:hover {
-            transform: scale(1.2);
-            color: #007bff;
-        }
-
-        footer .fab {
-            transition: transform 0.3s ease;
-        }
-
-        footer .fab:hover {
-            transform: scale(1.3);
-        }
-
-        /* Media Queries for Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero {
-                height: auto;
-                padding-top: 60px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-                white-space: normal;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .hero .btn {
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-
-            .about h2 {
-                font-size: 2rem;
-            }
-
-            .about img {
-                max-width: 200px;
-            }
-
-            .cta h2 {
-                font-size: 2rem;
-            }
-
-            footer a {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Media Queries for Tablets */
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .about h2 {
-                font-size: 2.3rem;
-            }
-
-            .cta h2 {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+</style>
 </head>
 
 <body>
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="bubble"></div>
-    </div>
 
-    <!-- Modal Pop-Up -->
-    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Welcome to My Portfolio</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Thank you for visiting my portfolio. I hope you'll enjoy exploring my Projects and Services. Let me know if you have any questions!
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#">Zakaria J. Malulu</a>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">Zakaria J. Malulu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-cogs"></i> Services </a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-    <!-- Hero Section -->
-    <header class="hero text-white text-center py-5" data-aos="fade-up">
-        <div class="container">
-            <h1 class="display-4 mb-4"><i class="fas fa-laptop-code"></i> Welcome! </h1>
-            <p class="lead mb-4">I’m Zakaria J. Malulu, a Bachelor Degree in Computer Science graduate, passionate about software development and creating innovative digital solutions.</p>
-            <a href="projects.html" class="btn btn-light btn-lg shadow-sm">Explore My Work <i class="fas fa-arrow-right ms-2"></i></a>
-        </div>
-    </header>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
 
-    <!-- New Section: Call to Action for Services Page -->
-    <section class="cta py-5">
-        <div class="container">
-            <h2>Interested in Our Services?</h2>
-            <p class="lead mb-4">Explore the services we offer and take your business to the next level. Whether it's web development, mobile app development, or system administration, we’ve got you covered!</p>
-            <a href="services.html" class="btn btn-light btn-lg shadow-sm"><i class="fas fa-cogs"></i> View Our Services</a>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+<div class="container">
 
-    <!-- About Me Section -->
-    <section class="about py-5" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-4"><i class="fas fa-user-circle"></i> About Me</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4 mb-4 mb-md-0" data-aos="fade-right">
-                    <img src="assets/profile.webp" class="img-fluid rounded-circle shadow" alt="Zakaria J. Malulu">
-                </div>
-                <div class="col-md-8" data-aos="fade-left">
-                    <p><i class="fas fa-code"></i> I'm Zakaria, a passionate software developer with a love for problem-solving and creating innovative digital solutions. I specialize in full-stack development and have worked on a wide range of web applications, from backend to frontend development.</p>
-                    <p><i class="fas fa-rocket"></i> I am always eager to learn new technologies and techniques to enhance my skills and deliver the best solutions to real-world problems. When I'm not coding, I enjoy exploring new tech trends, contributing to open-source projects, and staying up to date with the latest innovations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<span class="badge-custom">Software Developer • 1+ Year Experience</span>
 
-    <!-- Call to Action Section -->
-    <section class="cta py-5" data-aos="fade-up">
-        <div class="container">
-            <h2><i class="fas fa-lightbulb"></i> Ready to Bring Your Ideas to Life?</h2>
-            <p class="lead mb-4">Let's collaborate and create something amazing together.</p>
-            <a href="contact.html" class="btn btn-light btn-lg shadow-sm"><i class="fas fa-paper-plane"></i> Get in Touch</a>
-        </div>
-    </section>
+<h1 class="mt-4">
+Building Reliable & Scalable <br>
+<span class="text-accent">Web-Based Systems</span>
+</h1>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Zakaria Malulu. All Rights Reserved.</p>
-            <div>
-                <a href="https://www.linkedin.com/in/zakaria-malulu-7871b437a" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Malulu1286" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:zakariamalulu12@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://wa.me/+255768679436" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/zed_grouptz" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
+<p>
+I am a Computer Science graduate and professional software developer
+with hands-on experience designing, developing, and deploying
+database-driven applications and business management systems.
+I focus on clean architecture, performance, and user-centered solutions.
+</p>
 
-    <!-- Bootstrap JS and Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS for animations -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init();
+<a href="projects.html" class="btn btn-primary me-3">View My Work</a>
+<a href="resume.html" class="btn btn-outline-light">Download Resume</a>
 
-        // Show modal pop-up on page load
-        window.onload = function() {
-            // Delay the page load for 2 seconds
-            setTimeout(function() {
-                // Hide the loading overlay after the delay
-                document.getElementById('loadingOverlay').style.display = 'none';
-            }, 2000); // 2000ms = 2 seconds
-        };
-    </script>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+<div class="container">
+<h2 class="section-title text-center">About Me</h2>
+
+<div class="row justify-content-center">
+<div class="col-lg-8 text-center">
+<p>
+With over one year of professional development experience,
+I have built and maintained dynamic web applications including
+management systems, booking platforms, dashboards,
+and authentication-based platforms.
+</p>
+
+<p>
+My technical expertise includes PHP, MySQL, JavaScript,
+Bootstrap, system architecture design, and secure authentication workflows.
+I am comfortable handling projects from initial concept
+to full deployment and optimization.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="section bg-dark">
+<div class="container">
+<h2 class="section-title text-center">Professional Services</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="service-box">
+<i class="fas fa-code"></i>
+<h5>Web Application Development</h5>
+<p>
+Custom-built, secure, and scalable web systems tailored
+to business and organizational needs.
+</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="service-box">
+<i class="fas fa-database"></i>
+<h5>Database & System Architecture</h5>
+<p>
+Optimized relational database structures with strong
+data integrity and performance efficiency.
+</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="service-box">
+<i class="fas fa-server"></i>
+<h5>Deployment & System Administration</h5>
+<p>
+System configuration, hosting setup, security integration,
+and ongoing maintenance support.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+<div class="container">
+<h2 class="mb-4">Let’s Build Something Exceptional</h2>
+<p class="mb-4">
+Open to software development roles, freelance projects,
+and collaborative tech initiatives.
+</p>
+<a href="contact.html" class="btn btn-primary btn-lg">Get In Touch</a>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+
+<p>© 2026 Zakaria J. Malulu. All Rights Reserved.</p>
+<p>Software Developer | Full-Stack Developer | System Architect</p>
+
+<div class="mt-3">
+<a href="https://github.com/Malulu1286" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/zakaria-malulu-7871b437a" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="mailto:zakariamalulu12@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-
 </html>
