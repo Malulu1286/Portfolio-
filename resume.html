@@ -1,231 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Zakaria J. Malulu</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- AOS CSS for animations -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Custom styles -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f6f9;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume | Zakaria J. Malulu</title>
 
-        .navbar {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.7rem;
-        }
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-        .resume {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            margin-top: 20px;
-        }
+<!-- AOS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-        .heading-line {
-            width: 50px;
-            height: 3px;
-            background-color: #007bff;
-            margin-bottom: 20px;
-        }
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #007bff;
-        }
+<style>
 
-        .card {
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
+:root{
+    --primary:#2563eb;
+    --dark:#0f172a;
+    --card:#1e293b;
+    --muted:#94a3b8;
+}
 
-        .card:hover {
-            transform: scale(1.05);
-        }
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--dark);
+    color:#e2e8f0;
+}
 
-        .card-body {
-            padding: 20px;
-        }
+/* NAVBAR */
+.navbar{
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+}
 
-        .summary, .education, .experience {
-            margin-bottom: 30px;
-        }
+.nav-link{
+    color:#cbd5e1 !important;
+    font-weight:500;
+}
 
-        /* Remove bullets from lists */
-        .education ul, .experience ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
+.nav-link:hover{
+    color:var(--primary) !important;
+}
 
-        .education li, .experience li {
-            margin-bottom: 10px;
-        }
+/* HEADER */
+.resume-hero{
+    padding:120px 0 60px;
+    text-align:center;
+}
 
-        footer {
-            background: linear-gradient(to right, #343a40, #495057);
-            color: white;
-            padding: 40px 0;
-            position: relative;
-            text-align: center;
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-        }
+.resume-hero h1{
+    font-weight:700;
+    font-size:2.5rem;
+}
 
-        footer p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
+.resume-hero p{
+    max-width:700px;
+    margin:20px auto 0;
+    color:var(--muted);
+}
 
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.5rem;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
+/* SECTION */
+.section{
+    padding:60px 0;
+}
 
-        footer a:hover {
-            color: #007bff;
-            transform: scale(1.2);
-        }
+.card-custom{
+    background:var(--card);
+    border:none;
+    border-radius:18px;
+    padding:30px;
+    transition:0.3s;
+}
 
-        footer .fab, footer .fas {
-            transition: transform 0.3s ease;
-        }
+.card-custom:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
 
-        footer .fab:hover, footer .fas:hover {
-            transform: scale(1.3);
-        }
+.section-title{
+    font-weight:600;
+    margin-bottom:20px;
+    color:var(--primary);
+}
 
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-    </style>
+ul{
+    list-style:none;
+    padding-left:0;
+}
+
+ul li{
+    margin-bottom:10px;
+    color:var(--muted);
+}
+
+ul li i{
+    color:var(--primary);
+    margin-right:8px;
+}
+
+/* BUTTON */
+.btn-primary{
+    background:var(--primary);
+    border:none;
+    border-radius:30px;
+    padding:10px 25px;
+    font-size:0.9rem;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
+}
+
+/* FOOTER */
+footer{
+    background:#0b1120;
+    padding:40px 0;
+    text-align:center;
+}
+
+footer a{
+    color:var(--muted);
+    margin:0 12px;
+    font-size:1.3rem;
+    transition:0.3s;
+}
+
+footer a:hover{
+    color:var(--primary);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .resume-hero{
+        padding:100px 0 40px;
+    }
+
+    .resume-hero h1{
+        font-size:2rem;
+    }
+}
+
+</style>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Zakaria Malulu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-user"></i> About</a></li>
-                     <li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-cogs"></i> Services </a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html"><i class="fas fa-file-alt"></i> Resume</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Resume Section -->
-    <section class="resume py-5" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-4"><i class="fas fa-file-alt"></i> My Resume</h2>
-            <div class="heading-line"></div>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<div class="container">
+<a class="navbar-brand fw-semibold" href="index.html">Zakaria J. Malulu</a>
 
-            <!-- Summary Section -->
-            <div class="summary" data-aos="fade-up">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="section-title"><i class="fas fa-info-circle"></i> Summary</h3>
-                        <p> I'm Zakaria Malulu, a Bachelor Degree in Computer Science graduate with a passion for software development and web technologies. I specialize in creating reliable and efficient software solutions. My goal is to solve complex challenges with innovative, scalable, and user-friendly digital products.</p>
-                    </div>
-                </div>
-            </div>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-            <!-- Education Section -->
-            <div class="education" data-aos="fade-up">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
-                        <div class="heading-line"></div>
-                        <ul>
-                            <li><strong>Bachelor's Degree in Computer Science</strong> - Institute Of Accountancy Arusha-IAA (2022 - 2025)</li>
-                            <li><strong>Advanced Level Education</strong> - Tarime High School (2020 - 2022)</li>
-                            <li><strong>Ordinary Level Education</strong> - Ibaga Secondary School (2016 - 2019)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link active" href="#">Resume</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
 
-            <!-- Professional Experience Section -->
-            <div class="experience" data-aos="fade-up">
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h3>
-                        <div class="heading-line"></div>
-                        <ul>
-                            <li><strong>Student Field Training</strong> - Sokoine University of Agriculture-SUA (July-September 2024)
-                                <ul>
-                                    <li><i class="fas fa-check-circle"></i> Networking and Systems Maintenance.</li>
-                                    <li><i class="fas fa-check-circle"></i> Assisted in maintaining and securing network infrastructures and internal systems. Performed system audits, identified potential security gaps, and supported IT infrastructure upgrades to enhance cybersecurity resilience.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Internship</strong> - St. Reuben Training College-Morogoro (2025-Present)
-                                <ul>
-                                    <li><i class="fas fa-check-circle"></i> Developed a web-based management system designed to streamline administrative functions such as course management, student registration, and program tracking.</li>
-                                    <li><i class="fas fa-check-circle"></i> Created an intuitive system using PHP, MySQL, Bootstrap, and FontAwesome to improve the college’s digital experience.</li>
-                                    <li><i class="fas fa-check-circle"></i> Contributed to the project by designing system architecture and developing front-end and back-end components.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<!-- HERO -->
+<section class="resume-hero container">
+<h1>Professional Resume</h1>
+<p>
+Results-driven Software Developer with experience in full-stack web development,
+database-driven systems, and IT infrastructure support.
+Focused on building scalable, secure, and performance-optimized applications.
+</p>
 
-        </div>
-    </section>
+<a href="#" class="btn btn-primary mt-4">
+<i class="fas fa-download"></i> Download PDF Resume
+</a>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Zakaria Malulu. All Rights Reserved.</p>
-            <div>
-                <a href="https://www.linkedin.com/in/zakaria-malulu-7871b437a" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Malulu1286" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="mailto:zakariamalulu12@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://wa.me/+255768679436" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/zed_grouptz" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
+<!-- SUMMARY -->
+<section class="section container" data-aos="fade-up">
+<div class="card-custom">
+<h3 class="section-title"><i class="fas fa-user-tie"></i> Professional Summary</h3>
+<p>
+Bachelor of Computer Science graduate with practical experience in
+web application development, system design, and IT infrastructure support.
+Skilled in PHP, MySQL, Bootstrap, and modern front-end technologies.
+Strong analytical thinker with the ability to translate business requirements
+into functional, user-centered software systems.
+</p>
+</div>
+</section>
 
-    <!-- Bootstrap JS and Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS for animations -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init();
-    </script>
+<!-- EDUCATION -->
+<section class="section container" data-aos="fade-up">
+<div class="card-custom">
+<h3 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+<ul>
+<li><strong>Bachelor of Computer Science</strong> – Institute of Accountancy Arusha (2022 – 2025)</li>
+<li><strong>Advanced Level Education</strong> – Tarime High School (2020 – 2022)</li>
+<li><strong>Ordinary Level Education</strong> – Ibaga Secondary School (2016 – 2019)</li>
+</ul>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section container" data-aos="fade-up">
+<div class="card-custom">
+<h3 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h3>
+
+<h5 class="mt-3">Intern – St. Reuben Training College (2025 – Present)</h5>
+<ul>
+<li><i class="fas fa-check"></i>Developed a web-based academic management system for course administration and student registration.</li>
+<li><i class="fas fa-check"></i>Designed and implemented database architecture using MySQL.</li>
+<li><i class="fas fa-check"></i>Built responsive UI components using Bootstrap and integrated secure authentication mechanisms.</li>
+</ul>
+
+<h5 class="mt-4">Field Training – Sokoine University of Agriculture (July – Sept 2024)</h5>
+<ul>
+<li><i class="fas fa-check"></i>Assisted in network infrastructure maintenance and system monitoring.</li>
+<li><i class="fas fa-check"></i>Performed system audits and supported IT security enhancements.</li>
+<li><i class="fas fa-check"></i>Contributed to infrastructure upgrades improving operational efficiency.</li>
+</ul>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+<p>© <span id="year"></span> Zakaria J. Malulu. All Rights Reserved.</p>
+<p>Software Developer | Full-Stack Engineer | Systems Architect</p>
+
+<div class="mt-3">
+<a href="https://github.com/Malulu1286" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.linkedin.com/in/zakaria-malulu-7871b437a" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="mailto:zakariamalulu12@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://wa.me/+255768679436" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({ duration: 800 });
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
-
 </html>
-
